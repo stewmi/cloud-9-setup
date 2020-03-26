@@ -10,6 +10,6 @@ Resources:
     Type: AWS::Cloud9::EnvironmentEC2
     Properties: 
       Description: Your Cloud Development Workspace
-      InstanceType: m5.medium
+      InstanceType: m5.large
       Name: !Sub "${AWS::StackName}-developer-workbench"
       SubnetId: !Ref Subnet
