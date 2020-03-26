@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: A template to build a Cloud9 Workspace
+Parameters:
+  Subnet:
+    Type: AWS::EC2::Subnet::Id
+    Description: The Virtual Private Cloud Subnet that you will deploy Cloud9 in.
+
+Resources:
+  cloud9instance:
+    Type: AWS::Cloud9::EnvironmentEC2
+    Properties: 
+      Description: Your Cloud Development Workspace
+      InstanceType: m5.medium
+      Name: !Sub "${AWS::StackName}-developer-workbench"
+      SubnetId: !Ref Subnet
